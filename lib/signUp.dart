@@ -1,5 +1,7 @@
+import 'package:araianibazar/profile.dart';
 import 'package:araianibazar/splash.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'login.dart';
 
 class signUp extends StatefulWidget {
@@ -14,7 +16,7 @@ class _signUpState extends State<signUp> {
   TextEditingController passControler = TextEditingController();
   TextEditingController emailControler = TextEditingController();
   bool errorcheck = false;
-
+  bool _secure = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -101,7 +103,6 @@ class _signUpState extends State<signUp> {
                         left: 30, top: 1, right: 30, bottom: 1),
                     child: TextField(
                       controller: emailControler,
-                      obscureText: true,
                       decoration: InputDecoration(
                           hintText: "Email or phone number",
                           labelText: "Email",
@@ -144,13 +145,19 @@ class _signUpState extends State<signUp> {
                     padding: const EdgeInsets.only(
                         left: 30, top: 1, right: 30, bottom: 1),
                     child: TextField(
-                      obscureText: true,
+                      obscureText: _secure,
                       controller: passControler,
                       decoration: InputDecoration(
                           hintText: "Enter your password",
                           labelText: "Password",
                           errorText: errorcheck ? "password can't empty" : null,
-                          suffixIcon: Icon(Icons.remove_red_eye),
+                          suffixIcon: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  _secure = !_secure;
+                                });
+                              },
+                              icon: Icon(Icons.remove_red_eye)),
                           hintStyle: TextStyle(
                             color: Colors.black,
                             fontSize: 16,
@@ -187,22 +194,22 @@ class _signUpState extends State<signUp> {
                         left: 30, top: 2, right: 30, bottom: 2),
                     child: TextButton(
                         onPressed: () {
-                          errorCheckFun() {
-                            if (userNameControler.text.isEmpty ||
-                                passControler.text.isEmpty ||
-                                userNameControler.text.length <= 3 ||
-                                passControler.text.length <= 3) {
-                              setState(() {
-                                errorcheck = true;
-                              });
-                              return;
-                            }
-                          }
+                          if (userNameControler.text.isEmpty ||
+                              passControler.text.isEmpty ||
+                              emailControler.text.isEmpty ||
+                              userNameControler.text.length <= 3 ||
+                              passControler.text.length <= 3) {
+                            setState(() {
+                              errorcheck = true;
+                            });
+                          } else {
+                            setShardPref();
 
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => splash()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => login()));
+                          }
                         },
                         child: Text(
                           "Submit",
@@ -227,5 +234,23 @@ class _signUpState extends State<signUp> {
         ),
       )),
     );
+  }
+
+  // errorCheckFun() {
+  //   if (userNameControler.text.isEmpty ||
+  //       passControler.text.isEmpty ||
+  //       userNameControler.text.length <= 3 ||
+  //       passControler.text.length <= 3) {
+  //     setState(() {
+  //       errorcheck = true;
+  //     });
+  //     return;
+  //   }
+  // }
+
+  setShardPref() async {
+    final pref = await SharedPreferences.getInstance();
+    pref.setString('user_name', userNameControler.text);
+    pref.setString('pass', passControler.text);
   }
 }

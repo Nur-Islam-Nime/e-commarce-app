@@ -1,4 +1,8 @@
-import 'neumorphic.dart';
+import 'package:araianibazar/forgotpass.dart';
+import 'package:araianibazar/dashboard.dart';
+import 'package:araianibazar/profile.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 import 'signUp.dart';
 import 'splash.dart';
 import 'package:flutter/material.dart';
@@ -12,13 +16,17 @@ class _loginState extends State<login> {
   @override
   void initState() {
     // TODO: implement initState
-    errorCheckFun();
+    // errorCheckFun();
+    getSharedPref();
     super.initState();
   }
 
   TextEditingController userNameControler = TextEditingController();
   TextEditingController passControler = TextEditingController();
   bool errorcheck = false;
+  String name = "";
+  String pass = "";
+  bool _secure = true;
 
   @override
   Widget build(BuildContext context) {
@@ -109,14 +117,20 @@ class _loginState extends State<login> {
                     padding: const EdgeInsets.only(
                         left: 25, top: 1, right: 25, bottom: 1),
                     child: TextField(
-                      obscureText: true,
+                      obscureText: _secure,
                       controller: passControler,
                       decoration: InputDecoration(
                           hintText: "Enter your password",
                           labelText: "Password",
                           errorText:
                               errorcheck ? "Password cannot empty" : null,
-                          suffixIcon: Icon(Icons.remove_red_eye),
+                          suffixIcon: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  _secure = !_secure;
+                                });
+                              },
+                              icon: Icon(Icons.remove_red_eye)),
                           hintStyle: TextStyle(
                             color: Colors.black,
                             fontSize: 16,
@@ -134,7 +148,12 @@ class _loginState extends State<login> {
                 Container(
                   alignment: Alignment.centerRight,
                   child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => forgotpass()));
+                      },
                       child: Text("Forgot password?",
                           style: TextStyle(color: Colors.black, fontSize: 16))),
                 ),
@@ -161,13 +180,16 @@ class _loginState extends State<login> {
                         left: 30, top: 2, right: 30, bottom: 2),
                     child: TextButton(
                         onPressed: () {
-                          // errorCheckFun();
-                          errorCheckFun();
-
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => splash()));
+                          // errorCheckFun()
+                          if (userNameControler.text == name &&
+                              passControler.text == pass) {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => dashboard()));
+                          } else {
+                            errorCheckFun();
+                          }
                         },
                         child: Text("Sign in",
                             style:
@@ -179,8 +201,8 @@ class _loginState extends State<login> {
                   // alignment: Alignment.centerRight,
                   child: TextButton(
                       onPressed: () {
-                        // Navigator.push(context,
-                        //     MaterialPageRoute(builder: (context) => signUp()));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => signUp()));
                       },
                       child: Text("Haven't account? Sing up",
                           style: TextStyle(color: Colors.black, fontSize: 16))),
@@ -208,10 +230,10 @@ class _loginState extends State<login> {
                         left: 30, top: 2, right: 30, bottom: 2),
                     child: TextButton(
                         onPressed: () {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => signUp()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => signUp()));
                         },
                         child: Text(
                           "Sign Up",
@@ -227,6 +249,15 @@ class _loginState extends State<login> {
     );
   }
 
+  // checkfun() {
+  //   if (userNameControler.text.isEmpty && passControler.text.isEmpty) {
+  //     errorcheck = true;
+  //   } else if (userNameControler.text.length <= 3 ||
+  //       passControler.text.length <= 3) {
+  //     errorcheck = true;
+  //   } else {}
+  // }
+
   errorCheckFun() {
     if (userNameControler.text.isEmpty ||
         passControler.text.isEmpty ||
@@ -237,5 +268,14 @@ class _loginState extends State<login> {
       });
       return;
     }
+  }
+
+  getSharedPref() async {
+    final pref = await SharedPreferences.getInstance();
+
+    setState(() {
+      name = pref.getString('user_name')!;
+      pass = pref.getString('pass')!;
+    });
   }
 }
