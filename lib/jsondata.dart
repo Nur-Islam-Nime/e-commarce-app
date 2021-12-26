@@ -16,7 +16,7 @@ class _jsondataState extends State<jsondata> {
   @override
   void initState() {
     // TODO: implement initState
-    fetchData();
+    // fetchData();
     super.initState();
   }
 
@@ -51,17 +51,17 @@ class _jsondataState extends State<jsondata> {
             }));
   }
 
-  void fetchData() async {
-    try {
-      final response = await http.get(Uri.parse(url));
-      final jsondata = jsonDecode(response.body) as List;
-      setState(() {
-        _postjson = jsondata;
-      });
-    } catch (e) {
-      Fluttertoast.showToast(
-          msg: "Check your internet connection",
-          toastLength: Toast.LENGTH_LONG);
-    }
-  }
+  // void fetchData() async {
+  //   try {
+  //     final response = await http.get(Uri.parse(url));
+  //     final jsondata = jsonDecode(response.body) as List;
+  //     setState(() {
+  //       _postjson = jsondata;
+  //     });
+  //   } catch (e) {
+  //     Fluttertoast.showToast(
+  //         msg: "Check your internet connection",
+  //         toastLength: Toast.LENGTH_LONG);
+  //   }
+  // }
 }

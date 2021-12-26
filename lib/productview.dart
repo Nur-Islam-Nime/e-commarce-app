@@ -19,6 +19,18 @@ class _productviewState extends State<productview> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(227, 237, 247, 1),
+      appBar: AppBar(
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(
+              Icons.arrow_back,
+              color: Colors.black,
+            )),
+        elevation: 0,
+        backgroundColor: Color.fromRGBO(227, 237, 247, 1),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -167,35 +179,9 @@ class _productviewState extends State<productview> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.message_rounded), label: "Message"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle_outlined), label: "Profile")
-        ],
-        selectedItemColor: Colors.grey,
-        unselectedItemColor: Colors.black,
-        elevation: 50,
-        currentIndex: _selectNavPosition,
-        backgroundColor: Color.fromRGBO(227, 237, 247, 1),
-        onTap: (int index) {
-          setState(() {
-            _selectNavPosition = index;
-          });
-          if (_selectNavPosition == 0) {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => dashboard()));
-          } else if (_selectNavPosition == 1) {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => login()));
-          } else {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => signUp()));
-          }
-        },
-      ),
+      //   bottomNavigationBar:BottomNavigationBar(
+      //     items:[
+      //       BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),]
     );
   }
 }

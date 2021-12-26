@@ -13,15 +13,15 @@ class splash extends StatefulWidget {
 
 class _splashState extends State<splash> {
   @override
-  // void initState() {
-  //   // TODO: implement initState
+  void initState() {
+    // TODO: implement initState
 
-  //   Timer(Duration(seconds: 4), () {
-  //     Navigator.push(context, MaterialPageRoute(builder: (context) => login()));
-  //   });
+    Timer(Duration(seconds: 4), () {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => login()));
+    });
 
-  //   super.initState();
-  // }
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
