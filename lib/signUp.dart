@@ -1,5 +1,5 @@
-import 'package:araianibazar/profile.dart';
-import 'package:araianibazar/splash.dart';
+import 'profile.dart';
+import 'splash.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'login.dart';
@@ -251,6 +251,7 @@ class _signUpState extends State<signUp> {
   setShardPref() async {
     final pref = await SharedPreferences.getInstance();
     pref.setString('user_name', userNameControler.text);
+    pref.setString('email', emailControler.text);
     pref.setString('pass', passControler.text);
   }
 }

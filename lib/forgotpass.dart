@@ -1,4 +1,4 @@
-import 'package:araianibazar/login.dart';
+import 'login.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fluttertoast/fluttertoast.dart';

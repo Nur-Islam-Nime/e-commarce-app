@@ -1,4 +1,4 @@
-import 'package:araianibazar/productview.dart';
+import 'productview.dart';
 import 'package:flutter/material.dart';
 
 import 'headphone.dart';

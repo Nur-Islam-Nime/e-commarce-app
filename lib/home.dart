@@ -1,7 +1,7 @@
-import 'package:araianibazar/earphone.dart';
-import 'package:araianibazar/gear.dart';
-import 'package:araianibazar/productview.dart';
-import 'package:araianibazar/speaker.dart';
+import 'earphone.dart';
+import 'gear.dart';
+import 'productview.dart';
+import 'speaker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_carousel_slider/carousel_slider.dart';
@@ -111,147 +111,9 @@ class _homeState extends State<home> {
                 ),
               ),
             ),
-            Container(
-              // height: 100,
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  // scrollDirection:Axis.horizontal
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      height: MediaQuery.of(context).size.height / 5,
-                      width: MediaQuery.of(context).size.width / 3,
-                      decoration: BoxDecoration(
-                          color: Color.fromRGBO(227, 237, 247, 1),
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 3,
-                                blurRadius: 10,
-                                offset: Offset(5, 5)),
-                            BoxShadow(
-                                color: Colors.white,
-                                spreadRadius: 3,
-                                blurRadius: 10,
-                                offset: Offset(-5, -5))
-                          ]),
-                      child: TextButton(
-                          onPressed: () {}, child: Text("Headphone")),
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.height / 5,
-                      width: MediaQuery.of(context).size.width / 3,
-                      decoration: BoxDecoration(
-                          color: Color.fromRGBO(227, 237, 247, 1),
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 3,
-                                blurRadius: 10,
-                                offset: Offset(5, 5)),
-                            BoxShadow(
-                                color: Colors.white,
-                                spreadRadius: 3,
-                                blurRadius: 10,
-                                offset: Offset(-5, -5))
-                          ]),
-                      child: TextButton(
-                          onPressed: () {}, child: Text("Headphone")),
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.height / 5,
-                      width: MediaQuery.of(context).size.width / 3,
-                      decoration: BoxDecoration(
-                          color: Color.fromRGBO(227, 237, 247, 1),
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 3,
-                                blurRadius: 10,
-                                offset: Offset(5, 5)),
-                            BoxShadow(
-                                color: Colors.white,
-                                spreadRadius: 3,
-                                blurRadius: 10,
-                                offset: Offset(-5, -5))
-                          ]),
-                      child: TextButton(
-                          onPressed: () {}, child: Text("Headphone")),
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.height / 5,
-                      width: MediaQuery.of(context).size.width / 3,
-                      decoration: BoxDecoration(
-                          color: Color.fromRGBO(227, 237, 247, 1),
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 3,
-                                blurRadius: 10,
-                                offset: Offset(5, 5)),
-                            BoxShadow(
-                                color: Colors.white,
-                                spreadRadius: 3,
-                                blurRadius: 10,
-                                offset: Offset(-5, -5))
-                          ]),
-                      child: TextButton(
-                          onPressed: () {}, child: Text("Headphone")),
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.height / 5,
-                      width: MediaQuery.of(context).size.width / 3,
-                      decoration: BoxDecoration(
-                          color: Color.fromRGBO(227, 237, 247, 1),
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 3,
-                                blurRadius: 10,
-                                offset: Offset(5, 5)),
-                            BoxShadow(
-                                color: Colors.white,
-                                spreadRadius: 3,
-                                blurRadius: 10,
-                                offset: Offset(-5, -5))
-                          ]),
-                      child: TextButton(
-                          onPressed: () {}, child: Text("Headphone")),
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.height / 5,
-                      width: MediaQuery.of(context).size.width / 3,
-                      decoration: BoxDecoration(
-                          color: Color.fromRGBO(227, 237, 247, 1),
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 3,
-                                blurRadius: 10,
-                                offset: Offset(5, 5)),
-                            BoxShadow(
-                                color: Colors.white,
-                                spreadRadius: 3,
-                                blurRadius: 10,
-                                offset: Offset(-5, -5))
-                          ]),
-                      child: TextButton(
-                          onPressed: () {}, child: Text("Headphone")),
-                    )
-                  ],
-                ),
-              ),
-            ),
 
             Padding(
-              padding: const EdgeInsets.all(6.0),
+              padding: const EdgeInsets.all(36.0),
               child: Container(
                 decoration: BoxDecoration(
                     color: Color.fromRGBO(227, 237, 247, 1),

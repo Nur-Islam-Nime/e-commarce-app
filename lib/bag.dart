@@ -1,5 +1,7 @@
-import 'package:araianibazar/modelClass.dart';
+
 import 'package:flutter/material.dart';
+
+import 'modelClass.dart';
 
 class bagData {
   final List<productListModel> bagList = [
@@ -13,6 +15,16 @@ class bagData {
         200,
         4,
         "assets/images/bag/bag.png"),
+    productListModel(
+        2,
+        "bag",
+        "Bags are a pair of small loudspeaker drivers worn on or around the head over a user's ears. They are electroacoustic transducers, which convert an electrical signal to a corresponding sound. Headphones let a single user listen to an audio",
+        10,
+        2,
+        20,
+        200,
+        4,
+        "assets/images/bag/bag1.png"),
     productListModel(
         2,
         "bag",
@@ -93,5 +105,15 @@ class bagData {
         200,
         4,
         "assets/images/bag/bag4.png"),
+    productListModel(
+        4,
+        "Bag",
+        "Bags are a pair of small loudspeaker drivers worn on or around the head over a user's ears. They are electroacoustic transducers, which convert an electrical signal to a corresponding sound. Headphones let a single user listen to an audio",
+        10,
+        2,
+        20,
+        200,
+        4,
+        "assets/images/bag/bag3.png"),
   ];
 }

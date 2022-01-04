@@ -1,4 +1,4 @@
-import 'package:araianibazar/modelClass.dart';
+import 'modelClass.dart';
 import 'package:flutter/material.dart';
 
 class watchData {
@@ -93,5 +93,15 @@ class watchData {
         200,
         4,
         "assets/images/watch/watch.png"),
+    productListModel(
+        1,
+        "Watch",
+        "Watch are a pair of small loudspeaker drivers worn on or around the head over a user's ears. They are electroacoustic transducers, which convert an electrical signal to a corresponding sound. Headphones let a single user listen to an audio",
+        10,
+        2,
+        20,
+        200,
+        4,
+        "assets/images/watch/watch5.png"),
   ];
 }

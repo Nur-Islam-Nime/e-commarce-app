@@ -1,8 +1,8 @@
-import 'package:araianibazar/signUp.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'dashboard.dart';
-import 'login.dart';
+
+import 'invoice.dart';
 import 'modelClass.dart';
 
 class productview extends StatefulWidget {
@@ -14,7 +14,8 @@ class productview extends StatefulWidget {
 }
 
 class _productviewState extends State<productview> {
-  int _selectNavPosition = 0;
+  // int _selectNavpossition = 0;
+  int count = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,52 +32,34 @@ class _productviewState extends State<productview> {
         elevation: 0,
         backgroundColor: Color.fromRGBO(227, 237, 247, 1),
       ),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
+      body: SingleChildScrollView(
+        child: Container(
+          height: MediaQuery.of(context).size.height,
+          child: SafeArea(
+              child: Column(
             children: [
               Flexible(
-                flex: 6,
-                child: Padding(
-                  padding: const EdgeInsets.all(25.0),
+                flex: 3,
+                child: Center(
                   child: Container(
-                    decoration: BoxDecoration(
-                        color: Color.fromRGBO(227, 237, 247, 1),
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              spreadRadius: 3,
-                              blurRadius: 10,
-                              offset: Offset(5, 5)),
-                          BoxShadow(
-                              color: Colors.white,
-                              spreadRadius: 3,
-                              blurRadius: 10,
-                              offset: Offset(-5, -5))
-                        ]),
-                    child: Padding(
-                      padding: const EdgeInsets.all(18.0),
-                      child: Image.asset(
-                        widget.pro.imageUrl,
-                        fit: BoxFit.fill,
-                      ),
-                    ),
+                    child: Image.asset(widget.pro.imageUrl),
                   ),
                 ),
               ),
               Flexible(
-                  flex: 1,
-                  child: Padding(
-                    padding: const EdgeInsets.all(25.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          widget.pro.title,
-                          style: TextStyle(fontSize: 22, color: Colors.black),
-                        ),
-                        Container(
+                flex: 6,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(18.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            widget.pro.title,
+                            style: TextStyle(color: Colors.black, fontSize: 28),
+                          ),
+                          Container(
                             decoration: BoxDecoration(
                                 color: Color.fromRGBO(227, 237, 247, 1),
                                 borderRadius:
@@ -93,95 +76,170 @@ class _productviewState extends State<productview> {
                                       blurRadius: 10,
                                       offset: Offset(-5, -5))
                                 ]),
-                            child: TextButton(
-                                onPressed: () {},
-                                child: Text(
-                                  "Add to cart",
-                                  style: TextStyle(
-                                      fontSize: 20, color: Colors.black),
-                                )))
-                      ],
-                    ),
-                  )),
-              Flexible(
-                  flex: 1,
-                  child: Padding(
-                    padding: const EdgeInsets.all(25.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                              color: Color.fromRGBO(227, 237, 247, 1),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Colors.grey.withOpacity(0.5),
-                                    spreadRadius: 3,
-                                    blurRadius: 10,
-                                    offset: Offset(5, 5)),
-                                BoxShadow(
-                                    color: Colors.white,
-                                    spreadRadius: 3,
-                                    blurRadius: 10,
-                                    offset: Offset(-5, -5))
-                              ]),
-                          child: Text(
-                            widget.pro.price.toString(),
-                            style: TextStyle(fontSize: 20, color: Colors.black),
-                          ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                              color: Color.fromRGBO(227, 237, 247, 1),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Colors.grey.withOpacity(0.5),
-                                    spreadRadius: 3,
-                                    blurRadius: 10,
-                                    offset: Offset(5, 5)),
-                                BoxShadow(
-                                    color: Colors.white,
-                                    spreadRadius: 3,
-                                    blurRadius: 10,
-                                    offset: Offset(-5, -5))
-                              ]),
-                          child: RatingBar.builder(
-                            initialRating: 3,
-                            minRating: 1,
-                            direction: Axis.horizontal,
-                            allowHalfRating: true,
-                            itemCount: 5,
-                            itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-                            itemBuilder: (context, _) => Icon(
-                              Icons.star,
-                              color: Colors.amber,
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 15, right: 15, top: 8, bottom: 8),
+                              child: Text(
+                                "Price : \$${widget.pro.price}",
+                                style: TextStyle(fontSize: 20),
+                              ),
                             ),
-                            onRatingUpdate: (rating) {
-                              rating = rating;
-                            },
-                          ),
-                        )
-                      ],
+                          )
+                        ],
+                      ),
                     ),
-                  )),
-              Flexible(
-                  child: Padding(
-                      padding: const EdgeInsets.all(25.0),
-                      child: Text(
-                        widget.pro.desc,
-                        style: TextStyle(fontSize: 18, color: Colors.black),
-                      )))
+                    Padding(
+                      padding: const EdgeInsets.only(left: 18.0, right: 18.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                              decoration: BoxDecoration(
+                                  color: Color.fromRGBO(227, 237, 247, 1),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10)),
+                                  boxShadow: [
+                                    BoxShadow(
+                                        color: Colors.grey.withOpacity(0.5),
+                                        spreadRadius: 3,
+                                        blurRadius: 10,
+                                        offset: Offset(5, 5)),
+                                    BoxShadow(
+                                        color: Colors.white,
+                                        spreadRadius: 3,
+                                        blurRadius: 10,
+                                        offset: Offset(-5, -5))
+                                  ]),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: RatingBar.builder(
+                                  itemSize: 30,
+                                  initialRating: 3,
+                                  minRating: 1,
+                                  direction: Axis.horizontal,
+                                  allowHalfRating: true,
+                                  itemCount: 5,
+                                  itemPadding:
+                                      EdgeInsets.symmetric(horizontal: 2.0),
+                                  itemBuilder: (context, _) => Icon(
+                                    Icons.star,
+                                    color: Colors.amber,
+                                  ),
+                                  onRatingUpdate: (rating) {
+                                    rating = rating;
+                                  },
+                                ),
+                              )),
+                          Container(
+                            decoration: BoxDecoration(
+                                color: Color.fromRGBO(227, 237, 247, 1),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10)),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.grey.withOpacity(0.5),
+                                      spreadRadius: 3,
+                                      blurRadius: 10,
+                                      offset: Offset(5, 5)),
+                                  BoxShadow(
+                                      color: Colors.white,
+                                      spreadRadius: 3,
+                                      blurRadius: 10,
+                                      offset: Offset(-5, -5))
+                                ]),
+                            child: IntrinsicHeight(
+                              child: Row(
+                                children: [
+                                  Center(
+                                      child: IconButton(
+                                          onPressed: () {
+                                            setState(() {
+                                              if (count > 1) {
+                                                count--;
+                                              }
+                                            });
+                                          },
+                                          icon: Icon(Icons.remove))),
+                                  VerticalDivider(
+                                    color: Colors.black12,
+                                    thickness: 1,
+                                  ),
+                                  Center(
+                                    child: Text(
+                                      count.toString(),
+                                      style: TextStyle(fontSize: 28),
+                                    ),
+                                  ),
+                                  VerticalDivider(
+                                    thickness: 1,
+                                  ),
+                                  Center(
+                                    child: IconButton(
+                                        onPressed: () {
+                                          setState(() {
+                                            count++;
+                                          });
+                                        },
+                                        icon: Icon(Icons.add)),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(28.0),
+                      child: Container(
+                        child: Text(
+                          widget.pro.desc,
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              )
             ],
+          )),
+        ),
+      ),
+      floatingActionButton: Container(
+        decoration: BoxDecoration(
+            color: Color.fromRGBO(227, 237, 247, 1),
+            borderRadius: BorderRadius.all(Radius.circular(30)),
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 3,
+                  blurRadius: 10,
+                  offset: Offset(5, 5)),
+              BoxShadow(
+                  color: Colors.white,
+                  spreadRadius: 3,
+                  blurRadius: 10,
+                  offset: Offset(-5, -5))
+            ]),
+        child: FloatingActionButton.extended(
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => invoice(widget.pro, count)));
+          },
+          elevation: 0,
+          backgroundColor: Color.fromRGBO(227, 237, 247, 1),
+          label: Text(
+            'Add to Cart',
+            style: TextStyle(color: Colors.black, fontSize: 20),
+          ),
+          icon: Icon(
+            Icons.shopping_cart_outlined,
+            color: Colors.black,
           ),
         ),
       ),
-      //   bottomNavigationBar:BottomNavigationBar(
-      //     items:[
-      //       BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),]
     );
   }
 }

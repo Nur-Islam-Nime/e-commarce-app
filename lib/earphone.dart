@@ -1,4 +1,4 @@
-import 'package:araianibazar/modelClass.dart';
+import 'modelClass.dart';
 import 'package:flutter/material.dart';
 
 class earPhoneData {
@@ -85,6 +85,16 @@ class earPhoneData {
         "assets/images/earphone/earphone7.png"),
     productListModel(
         9,
+        "Earphone",
+        "Earphone are a pair of small loudspeaker drivers worn on or around the head over a user's ears. They are electroacoustic transducers, which convert an electrical signal to a corresponding sound. Headphones let a single user listen to an audio",
+        10,
+        2,
+        20,
+        200,
+        4,
+        "assets/images/earphone/earphone4.png"),
+    productListModel(
+        5,
         "Earphone",
         "Earphone are a pair of small loudspeaker drivers worn on or around the head over a user's ears. They are electroacoustic transducers, which convert an electrical signal to a corresponding sound. Headphones let a single user listen to an audio",
         10,

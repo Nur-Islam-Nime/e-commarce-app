@@ -39,6 +39,8 @@ dependencies:
   flutter_carousel_slider: ^1.0.8
   flutter_rating_bar: ^4.0.0
   http: ^0.13.4
+  rename: ^2.0.1
+  image_picker: ^0.8.4+1
   
   
   
@@ -69,7 +71,7 @@ flutter:
   assets:
     - assets/images/bag/
     - assets/images/camera/
-    - assets/images/controler/
+    - assets/images/controller/
     - assets/images/earphone/
     - assets/images/gear/
     - assets/images/watch/
@@ -78,6 +80,7 @@ flutter:
     - assets/images/speaker/
     - assets/images/VRset/
     - assets/images/bag/
+    - assets/images/
     
   #   - images/a_dot_ham.jpeg
 

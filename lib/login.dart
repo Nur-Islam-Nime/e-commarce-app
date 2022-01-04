@@ -1,6 +1,6 @@
-import 'package:araianibazar/forgotpass.dart';
-import 'package:araianibazar/dashboard.dart';
-import 'package:araianibazar/profile.dart';
+import 'forgotpass.dart';
+import 'dashboard.dart';
+import 'profile.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'signUp.dart';
@@ -136,6 +136,7 @@ class _loginState extends State<login> {
                             fontSize: 16,
                           ),
                           labelStyle: TextStyle(
+
                             color: Colors.black,
                             fontSize: 16,
                           ),
@@ -183,8 +184,7 @@ class _loginState extends State<login> {
                           // errorCheckFun()
                           if (userNameControler.text == name &&
                               passControler.text == pass) {
-                            Navigator.push(
-                                context,
+                            Navigator.of(context).pushReplacement(
                                 MaterialPageRoute(
                                     builder: (context) => dashboard()));
                           } else {

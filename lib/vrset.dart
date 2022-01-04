@@ -1,4 +1,4 @@
-import 'package:araianibazar/modelClass.dart';
+import 'modelClass.dart';
 import 'package:flutter/material.dart';
 
 class vrsetData {
@@ -12,7 +12,7 @@ class vrsetData {
         20,
         200,
         4,
-        "assets/images/vrheadset/vrheadset5.png"),
+        "assets/images/VRset/vrheadset5.png"),
     productListModel(
         2,
         "Vr headset",
@@ -22,7 +22,7 @@ class vrsetData {
         20,
         200,
         4,
-        "assets/images/vrheadset/vrheadset6.png"),
+        "assets/images/VRset/vrheadset6.png"),
     productListModel(
         3,
         "Vr headset",
@@ -32,7 +32,7 @@ class vrsetData {
         20,
         200,
         4,
-        "assets/images/vrheadset/vrheadset2.png"),
+        "assets/images/VRset/vrheadset2.png"),
     productListModel(
         4,
         "Vr headset",
@@ -42,7 +42,7 @@ class vrsetData {
         20,
         200,
         4,
-        "assets/images/vrheadset/vrheadset3.png"),
+        "assets/images/VRset/vrheadset3.png"),
     productListModel(
         5,
         "Vr headset",
@@ -52,7 +52,7 @@ class vrsetData {
         20,
         200,
         4,
-        "assets/images/vrheadset/vrheadset4.png"),
+        "assets/images/VRset/vrheadset4.png"),
     productListModel(
         6,
         "Vr headset",
@@ -62,7 +62,7 @@ class vrsetData {
         20,
         200,
         4,
-        "assets/images/vrheadset/vrheadset5.png"),
+        "assets/images/VRset/vrheadset5.png"),
     productListModel(
         7,
         "Vr headset",
@@ -72,7 +72,7 @@ class vrsetData {
         20,
         200,
         4,
-        "assets/images/vrheadset/vrheadset1.png"),
+        "assets/images/VRset/vrheadset1.png"),
     productListModel(
         8,
         "Vr headset",
@@ -82,7 +82,7 @@ class vrsetData {
         20,
         200,
         4,
-        "assets/images/vrheadset/vrheadset2.png"),
+        "assets/images/VRset/vrheadset2.png"),
     productListModel(
         9,
         "Vr headset",
@@ -92,6 +92,16 @@ class vrsetData {
         20,
         200,
         4,
-        "assets/images/vrheadset/vrheadset.png"),
+        "assets/images/VRset/vrheadset.png"),
+        productListModel(
+        5,
+        "Vr headset",
+        "Vr headset are a pair of small loudspeaker drivers worn on or around the head over a user's ears. They are electroacoustic transducers, which convert an electrical signal to a corresponding sound. Headphones let a single user listen to an audio",
+        10,
+        2,
+        20,
+        200,
+        4,
+        "assets/images/VRset/vrheadset4.png"),
   ];
 }

@@ -1,15 +1,17 @@
 import 'dart:ui';
 
-import 'package:araianibazar/category.dart';
-import 'package:araianibazar/controller.dart';
-import 'package:araianibazar/gear.dart';
-import 'package:araianibazar/headphone.dart';
-import 'package:araianibazar/login.dart';
-import 'package:araianibazar/profile.dart';
-import 'package:araianibazar/signUp.dart';
-import 'package:araianibazar/speaker.dart';
-import 'package:araianibazar/vrset.dart';
-import 'package:araianibazar/watch.dart';
+import 'package:araianybazar/invoice.dart';
+
+import 'category.dart';
+import 'controller.dart';
+import 'gear.dart';
+import 'headphone.dart';
+import 'login.dart';
+import 'profile.dart';
+import 'signUp.dart';
+import 'speaker.dart';
+import 'vrset.dart';
+import 'watch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_carousel_slider/carousel_slider.dart';
@@ -36,8 +38,8 @@ class _dashboardState extends State<dashboard> {
 
   final _pages = [
     home(),
-    profile(),
     message(),
+    profile(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -57,7 +59,9 @@ class _dashboardState extends State<dashboard> {
           backgroundColor: Color.fromRGBO(227, 237, 247, 1),
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+
+              },
               icon: Icon(Icons.shopping_cart_outlined),
               color: Colors.black,
             )
@@ -67,35 +71,91 @@ class _dashboardState extends State<dashboard> {
         drawer: Drawer(
           child: ListView(
             children: [
-              DrawerHeader(
-                  child: Column(
-                children: [
-                  Container(
-                      // child: Image(image: image),
-                      ),
-                  Container(
-                    alignment: Alignment.topLeft,
-                    child: Text("user name"),
-                  ),
-                  Container(
-                    alignment: Alignment.topLeft,
-                    child: Text("username@gmail.com"),
-                  )
-                ],
-              )),
-              ListTile(
-                title: Text("Profile"),
-                leading: Icon(
-                  Icons.account_circle_outlined,
-                  color: Colors.deepOrange,
-                ),
+              Container(
+                color: Color.fromRGBO(227, 237, 247, 1),
+                child: DrawerHeader(
+                    child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(18.0),
+                      child: Container(
+                          child: CircleAvatar(
+                        radius: 30.0,
+                        backgroundImage: AssetImage('assets/images/nime.jpg'),
+                        backgroundColor: Colors.transparent,
+                      )),
+                    ),
+                    Container(
+                      alignment: Alignment.topLeft,
+                      child: Text("Nur Islam Nime"),
+                    ),
+                    Container(
+                      alignment: Alignment.topLeft,
+                      child: Text("nurislamnime@gmail.com"),
+                    )
+                  ],
+                )),
               ),
-              ListTile(
-                  title: Text("Order"),
-                  leading: Icon(
-                    Icons.shopping_cart_rounded,
-                    color: Colors.deepOrange,
-                  ))
+              Container(
+                height: MediaQuery.of(context).size.height,
+                color: Color.fromRGBO(227, 237, 247, 1),
+                child: Column(
+                  children: [
+                    ListTile(
+                      title: Text("Android and IOS Developer"),
+                      leading: Icon(Icons.phone_android, color: Colors.black),
+                    ),
+                    ListTile(
+                        title: Text("Sherpur"),
+                        leading: Icon(
+                          Icons.home,
+                          color: Colors.black,
+                        )),
+                    ListTile(
+                        title: Text("01787559696"),
+                        leading: Icon(
+                          Icons.mobile_screen_share,
+                          color: Colors.black,
+                        )),
+                    ListTile(
+                        title: Text("Diploma in Computer Technology"),
+                        leading: Icon(
+                          Icons.school_rounded,
+                          color: Colors.black,
+                        )),
+                    Padding(
+                      padding: const EdgeInsets.all(18.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Color.fromRGBO(227, 237, 247, 1),
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 3,
+                                  blurRadius: 10,
+                                  offset: Offset(5, 5)),
+                              BoxShadow(
+                                  color: Colors.white,
+                                  spreadRadius: 3,
+                                  blurRadius: 10,
+                                  offset: Offset(-5, -5))
+                            ]),
+                        child: TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => login()));
+                            },
+                            child: Text("Log out",
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.black))),
+                      ),
+                    )
+                  ],
+                ),
+              )
             ],
           ),
         ),

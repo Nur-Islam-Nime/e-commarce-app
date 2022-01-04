@@ -1,11 +1,11 @@
-import 'package:araianibazar/modelClass.dart';
+import 'modelClass.dart';
 import 'package:flutter/material.dart';
 
 class headPhoneData {
   final List<productListModel> headPhoneList = [
     productListModel(
         1,
-        "Red Headphone",
+        "Headphone",
         "Headphones are a pair of small loudspeaker drivers worn on or around the head over a user's ears. They are electroacoustic transducers, which convert an electrical signal to a corresponding sound. Headphones let a single user listen to an audio",
         10,
         2,
@@ -15,7 +15,7 @@ class headPhoneData {
         "assets/images/headphone/headphone-red.png"),
     productListModel(
         2,
-        "black Headphone",
+        "Headphone",
         "Headphones are a pair of small loudspeaker drivers worn on or around the head over a user's ears. They are electroacoustic transducers, which convert an electrical signal to a corresponding sound. Headphones let a single user listen to an audio",
         10,
         2,
@@ -25,7 +25,7 @@ class headPhoneData {
         "assets/images/headphone/headphone-black.png"),
     productListModel(
         3,
-        "amber Headphone",
+        "Headphone",
         "Headphones are a pair of small loudspeaker drivers worn on or around the head over a user's ears. They are electroacoustic transducers, which convert an electrical signal to a corresponding sound. Headphones let a single user listen to an audio",
         10,
         2,
@@ -35,7 +35,7 @@ class headPhoneData {
         "assets/images/headphone/headphone-amber.png"),
     productListModel(
         4,
-        "blue Headphone",
+        "Headphone",
         "Headphones are a pair of small loudspeaker drivers worn on or around the head over a user's ears. They are electroacoustic transducers, which convert an electrical signal to a corresponding sound. Headphones let a single user listen to an audio",
         10,
         2,
@@ -45,7 +45,7 @@ class headPhoneData {
         "assets/images/headphone/headphone-blue.png"),
     productListModel(
         5,
-        "pink Headphone",
+        "Headphone",
         "Headphones are a pair of small loudspeaker drivers worn on or around the head over a user's ears. They are electroacoustic transducers, which convert an electrical signal to a corresponding sound. Headphones let a single user listen to an audio",
         10,
         2,
@@ -55,7 +55,7 @@ class headPhoneData {
         "assets/images/headphone/headphone-pink.png"),
     productListModel(
         6,
-        "white Headphone",
+        "Headphone",
         "Headphones are a pair of small loudspeaker drivers worn on or around the head over a user's ears. They are electroacoustic transducers, which convert an electrical signal to a corresponding sound. Headphones let a single user listen to an audio",
         10,
         2,
@@ -65,7 +65,7 @@ class headPhoneData {
         "assets/images/headphone/headphone-white.png"),
     productListModel(
         7,
-        "blue2 Headphone",
+        "Headphone",
         "Headphones are a pair of small loudspeaker drivers worn on or around the head over a user's ears. They are electroacoustic transducers, which convert an electrical signal to a corresponding sound. Headphones let a single user listen to an audio",
         10,
         2,
@@ -75,7 +75,7 @@ class headPhoneData {
         "assets/images/headphone/headphone-blue2.png"),
     productListModel(
         8,
-        "red Headphone",
+        "Headphone",
         "Headphones are a pair of small loudspeaker drivers worn on or around the head over a user's ears. They are electroacoustic transducers, which convert an electrical signal to a corresponding sound. Headphones let a single user listen to an audio",
         10,
         2,
@@ -85,7 +85,7 @@ class headPhoneData {
         "assets/images/headphone/headphone-red2.png"),
     productListModel(
         9,
-        "black Headphone",
+        "Headphone",
         "Headphones are a pair of small loudspeaker drivers worn on or around the head over a user's ears. They are electroacoustic transducers, which convert an electrical signal to a corresponding sound. Headphones let a single user listen to an audio",
         10,
         2,
@@ -93,5 +93,15 @@ class headPhoneData {
         200,
         4,
         "assets/images/headphone/headphone-black3.png"),
+    productListModel(
+        7,
+        "Headphone",
+        "Headphones are a pair of small loudspeaker drivers worn on or around the head over a user's ears. They are electroacoustic transducers, which convert an electrical signal to a corresponding sound. Headphones let a single user listen to an audio",
+        10,
+        2,
+        20,
+        200,
+        4,
+        "assets/images/headphone/headphone-blue2.png"),
   ];
 }
